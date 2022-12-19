@@ -1,4 +1,4 @@
-from __future__ import division
+#!/usr/bin/env python3
 from Bio import SeqIO
 import sys
 input_fasta = sys.argv[1]
