@@ -9,13 +9,13 @@ LABEL software="fastaLength_1.py"
 MAINTAINER  Marcela mu2@sanger.ac.uk
 
 ENV DEBIAN_FRONTEND=noninteractive
+COPY --chmod=0755 ./fastaLength_1.py /usr/local/bin/
 
 
-RUN apt-get install -y python3-pip python3-dev \
-  pip3 --no-cache-dir install --upgrade pip \
-  && pip3 install biopython \
+ENV PYTHONPATH=/usr/lib/python3.9/site-packages
+RUN /usr/local/bin/python -m pip install --upgrade pip
+RUN pip install biopython
+
 
 RUN cd  /bin/ \
   && git clone https://github.com/marcelauliano/doc-test.git
-
-RUN chmod -R 755 /bin
