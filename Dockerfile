@@ -15,6 +15,6 @@ RUN apt-get update -y
 RUN apt-get install -y python3
 RUN ln -s /usr/bin/python3 python
 RUN apt-get install -y python3-pip
-RUN pip install biopython
+RUN python -m pip install biopython
 
 COPY --chmod=0755 ./fastaLength_1.py /usr/local/bin/
