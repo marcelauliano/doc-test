@@ -9,11 +9,11 @@ LABEL software="fastaLength_1.py"
 MAINTAINER  Marcela mu2@sanger.ac.uk
 
 ENV DEBIAN_FRONTEND=noninteractive
-COPY --chmod=0755 ./fastaLength_1.py /usr/local/bin/
 
-ENV PYTHONPATH=/usr/lib/python3.9/site-packages
-RUN /usr/local/bin/python -m pip install --upgrade pip
+
+RUN apt-get update -y
+RUN apt-get install -y python
+RUN apt install python3-pip
 RUN pip install biopython
 
-RUN cd  /bin/ \
-  && git clone https://github.com/marcelauliano/doc-test.git
+COPY --chmod=0755 ./fastaLength_1.py /usr/local/bin/
