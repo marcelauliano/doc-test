@@ -13,7 +13,7 @@ COPY --chmod=0755 ./fastaLength_1.py /usr/local/bin/
 
 
 ENV PYTHONPATH=/usr/lib/python3.9/site-packages
-RUN /usr/local/bin/python -m pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 RUN pip install biopython
 
 
