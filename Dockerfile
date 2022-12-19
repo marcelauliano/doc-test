@@ -12,10 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 
 RUN 
-  && apt-get install -y python3-pip python3-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python3 python \
-  && pip3 --no-cache-dir install --upgrade pip \
+  pip3 --no-cache-dir install --upgrade pip \
   && pip3 install biopython \
 
 RUN cd  /bin/ \
