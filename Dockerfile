@@ -13,7 +13,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y
 RUN apt-get install -y python3
-RUN python3 -m pip install pip
+RUN ln -s /usr/bin/python3 python
+RUN pip3 --no-cache-dir install --upgrade pip
 RUN pip install biopython
 
 COPY --chmod=0755 ./fastaLength_1.py /usr/local/bin/
