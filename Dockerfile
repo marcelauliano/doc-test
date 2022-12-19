@@ -11,9 +11,7 @@ MAINTAINER  Marcela mu2@sanger.ac.uk
 ENV DEBIAN_FRONTEND=noninteractive
 
 
-RUN apt-get -qq -y update \
-  && apt-get -qq -y install default-jre \ 
-  && umask 022 \
+RUN 
   && apt-get install -y python3-pip python3-dev \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
